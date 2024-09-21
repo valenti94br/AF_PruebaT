@@ -83,7 +83,6 @@ npm install
 
 4. Set up your MongoDB database:
    - Create a `.env` file in the backend directory based on the provided `.env.example` file. This file should contain your MongoDB connection string and any other necessary environment variables.
-   - Create a `keys.js` file in the backend directory based on the `keys.example.js` file. This file should include any required keys or sensitive information.
 
 ## Usage
 
