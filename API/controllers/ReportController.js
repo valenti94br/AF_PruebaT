@@ -7,7 +7,7 @@ const ReportController = {
             res.status(201).send(report)
         } catch (error) {
             console.error(error)
-            res.status(500).send({ msg: 'Ha habido un problema al crear la noticia', error })
+            res.status(500).send({ msg: 'There was a problem creating the news', error })
         }
     },
     async getAll(req, res) {
@@ -16,7 +16,7 @@ const ReportController = {
             res.send(reports)
         } catch (error) {
             console.error(error);
-            res.status(500).send({ msg: 'Ha habido un problema al cargar las noticias', error })
+            res.status(500).send({ msg: 'There was a problem loading the news', error })
         }
     },
     async getById(req, res) {
@@ -25,16 +25,16 @@ const ReportController = {
             res.send(report)
         } catch (error) {
             console.error(error);
-            res.status(500).send({ msg: 'Ha habido un problema al cargar la noticia', error })
+            res.status(500).send({ msg: 'There was a problem loading the news item', error })
         }
     },
     async delete(req, res) {
         try {
             const report = await Report.findByIdAndDelete(req.params._id);
-            res.send({ message: 'Noticia eliminada', report });
+            res.send({ message: 'News deleted', report });
         } catch (error) {
             console.error(error);
-            res.status(500).send({ msg: 'Ha habido un problema al eliminar la noticia', error })
+            res.status(500).send({ msg: 'There was a problem deleting the news', error })
         }
     },
     async update(req, res) {
@@ -44,10 +44,10 @@ const ReportController = {
                 { ...req.body, archived: true },
                 { new: true }
             );
-            res.send({ message: "Noticia actualizada", report });
+            res.send({ message: 'News updated', report });
         } catch (error) {
             console.error(error);
-            res.status(500).send({ msg: 'Ha habido un problema al actualizar la noticia', error });
+            res.status(500).send({ msg: 'There was a problem updating the news', error });
         }
     }
     
