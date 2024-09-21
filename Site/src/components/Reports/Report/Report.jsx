@@ -7,7 +7,7 @@ const Report = () => {
 
     useEffect(() => {
         getReports();
-    }, []);
+    }, [getReports]);
 
     const handleShowActiveReports = () => {
         setShowArchived(false);
